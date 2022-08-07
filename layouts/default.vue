@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="body-container">
     <VmHeader />
-    <main>
+    <main class="main-container">
       <nuxt/>
-      <VmLoginModal />
-      <VmSignupModal />
+      <!-- <VmLoginModal /> -->
+      <!-- <VmSignupModal /> -->
       <VmCheckoutModal />
     </main>
     <VmFooter />
@@ -35,8 +35,17 @@ export default {
     @apply flex-col;
     height:100vh;
     margin:0;
+    font-family: 'Quattrocento Sans', sans-serif;
   }
+.body-container {
+  width: 100%;
+  height: 100%;
+}
 
+.main-container {
+  background-color: #1d2c3f;
+  color: white;
+}
   .input {
     @apply block;
     @apply w-full;

@@ -5,14 +5,28 @@ module.exports = {
   target: "static",
 
   router: {
-    base: "/Vuemmerce/"
+    base: "/"
   },
+  compilerOptions: {
 
+  },
   /*
    ** Headers of the page
    */
   head: {
     title: pkg.description,
+    script: [
+      {
+        src:"https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.min.js",
+      },
+      {
+        src:"https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js",
+        type: "text/javascript",
+      }
+    ],
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -119,6 +133,21 @@ module.exports = {
           "sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p",
         crossorigin: "anonymous",
         href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+      },
+      {
+        href: "https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css",
+        rel: "stylesheet"
+      },
+      {
+        href: "https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.css",
+        rel: "stylesheet"
+      },
+      {
+
       }
     ]
   },

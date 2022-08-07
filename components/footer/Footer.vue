@@ -1,11 +1,12 @@
 <template>
-  <footer class="bg-blue_light p-5 lg:p-0">
+  <footer class="footer-styles p-5 lg:p-0">
     <div class="py-16 mx-auto sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
-        <img src="../../static/vuemmerce-logo.png" class="mr-5 h-6 sm:h-9" alt="logo" />
+        <!-- <img src="../../static/vuemmerce-logo.png" class="mr-5 h-6 sm:h-9" alt="logo" /> -->
+        K.U.N
           <p class="max-w-xs mt-4 text-sm text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, accusantium.
+            A new place to collect NFT Assest
           </p>
           <div class="flex mt-8 space-x-6 text-gray-600">
             <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
@@ -96,5 +97,9 @@ export default {
 
  footer {
    margin-top: auto;
+   color: white;
+   background-color:#1d2c3f;
  }
+
+
 </style>
