@@ -73,7 +73,7 @@
           </p>
         </div>
         <div class="flex justify-between mt-5 items-center">
-          <select class="p-2 border-2 rounded-2xl" @change="onSelectQuantity(product.id)" v-model="selected">
+          <!-- <select class="p-2 border-2 rounded-2xl" @change="onSelectQuantity(product.id)" v-model="selected">
             <option
               v-bind:key="quantity"
               v-for="quantity in quantityArray"
@@ -81,7 +81,7 @@
             >
               {{ quantity }}
             </option>
-          </select>
+          </select> -->
           <button class="rounded-xl p-3 bg-blue text-white" v-if="!product.isAddedToCart" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
           <button class="rounded-xl p-3" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</button>
         </div>
@@ -165,10 +165,10 @@ export default {
 
 <style lang="scss" scoped>
   .detail {
+    padding: 20px;
     @apply flex;
     @apply flex-col;
     @apply lg:flex-row;
-    @apply m-5;
     @apply shadow-2xl;
 
     .img-wrapper {

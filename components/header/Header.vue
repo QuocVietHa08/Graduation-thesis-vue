@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="flex items-center">
-      <div class="mx-2">
+      <!-- <div class="mx-2">
         <div class="cursor-pointer" @click="showCheckoutModal">
           <span
             :class="[
@@ -29,7 +29,7 @@
             <i class="fa fa-shopping-cart"></i>
           </span>
         </div>
-      </div>
+      </div> -->
 
       <div class="mx-2 flex">
         <button class="flex" @click="handleConnectMetamask">
@@ -141,7 +141,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav-style {
-  background-color: #161e2b;
+  background-color: #1d2c3e;
   color: white;
   padding: 15px 10px;
 }

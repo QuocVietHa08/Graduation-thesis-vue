@@ -43,7 +43,7 @@ export default {
 }
 
 .main-container {
-  background-color: #1d2c3f;
+  background-color: #05071b;
   color: white;
 }
   .input {
