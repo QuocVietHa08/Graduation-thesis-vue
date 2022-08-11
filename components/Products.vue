@@ -82,7 +82,7 @@
               {{ quantity }}
             </option>
           </select> -->
-          <button class="rounded-xl p-3 bg-blue text-white" v-if="!product.isAddedToCart" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+          <button class="rounded-xl bg-button p-3 text-white" v-if="!product.isAddedToCart" @click="handleBuyProduct(product.id)">{{ buyNowLabel }}</button>
           <button class="rounded-xl p-3" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</button>
         </div>
       </div>
@@ -91,13 +91,17 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
   name: 'products',
   props: ['product', 'detail'],
-
+  components: [
+    'Swal',
+  ],
   data () {
     return {
-      addToCartLabel: 'Add to cart',
+      buyNowLabel: 'Buy now',
       viewDetailsLabel: 'Details',
       removeFromCartLabel: 'Remove from cart',
       addToFavouriteLabel: 'Add to favourite',
@@ -158,12 +162,54 @@ export default {
         quantity: this.selected
       }
       this.$store.commit('quantity', data);
+    },
+    async handleBuyProduct(id) {
+      console.log("hello:", id)
+
+      
+      
+    await ethereum
+    .request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: '0x95903BE0DF352cf5CB97c646B89E231099632990',
+          to: '0xbE01F13f55dFC9cDAe7475FEa3198de7B1499EEB',
+          value: '0x01a2241af62c0000',
+        },
+      ],
+    })
+    .then((txHash) => {
+      console.log(txHash)
+       Swal.fire({
+        toast: true,
+        icon: 'success',
+        position: 'top-end',
+        text: `Hash: ${txHash.slice(0,30)}`,
+        timer: 2000,
+        showConfirmButton: false,
+      })
+    })
+    .catch((error) => {
+       Swal.fire({
+        toast: true,
+        icon: 'error',
+        position: 'top-end',
+        text: `Error: ${error}}`,
+        timer: 2000,
+        showConfirmButton: false,
+      }) 
+    });
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+  .bg-button {
+    background-color: #9cbe11;
+  }
+
   .detail {
     padding: 20px;
     @apply flex;

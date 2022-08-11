@@ -25,6 +25,9 @@ module.exports = {
       {
         src:"https://cdn.jsdelivr.net/npm/vue-mapbox@latest/dist/vue-mapbox.min.js",
         type: "text/javascript",
+      }, 
+      {
+        src: "sweetalert2.all.min.js",
       }
     ],
     meta: [
